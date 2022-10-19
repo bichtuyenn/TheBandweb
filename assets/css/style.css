@@ -17,6 +17,37 @@ html{
 .text-white{
     color: #fff !important;
 }
+.row{
+    margin-left: -8px;
+    margin-right: -8px;
+}
+.mt-8 {
+    /* margin-top */
+    margin-top: 8px !important;
+}
+.mt-16 {
+    /* margin-top */
+    margin-top: 16px !important;
+}
+.row::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.col{
+    float:left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.col-half{
+    width: 50%;
+}
+.col-third{
+    width: 33.333%;
+}
+.pull-right{
+    float: right !important;
+}
 #header{
     height: 46px;
     background-color: black;
@@ -96,7 +127,7 @@ html{
 
 #content .content-section{
     width: 800px;
-    padding: 64px 0;
+    padding: 64px 0 112px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -116,6 +147,7 @@ html{
     /* font chu nghieng */
     opacity: 0.6;
     /* do trong suot bi mo` di */
+    padding-bottom: 30px;
 }
 #content .about-text{
     margin: 10px 0;
@@ -128,14 +160,13 @@ html{
 #content .members-list{
     margin-top: 48px;
 }
-#content .member-item{
-    float: left;
-    width: 33.333333%;
-    text-align: center;
-}
+
 #content .member-name{
     font-size: 15px;
 
+}
+.text-center{
+    text-align:  center !important;
 }
 #content .member-img{
     width: 154px;
@@ -184,14 +215,10 @@ html{
     margin-left: -8px;
     margin-right: -8px; */
     /* kĩ thuật làm cân 2 bên viền và căn giữa */
-    margin: 32px -8px 0;;
-    padding-bottom: 48px;
+    margin-top: 32px;
+    margin-bottom: 48px;
 }
-.place-item{
-    float: left;
-    width: 33.3333%;
-    padding: 0 8px;
-}
+
 .place-img{
     width: 100%;
     display: block;
@@ -218,19 +245,177 @@ html{
     margin-top: 15px;
     padding: 10px 0;
 }
-.place-buy-btn{
+.btn{
     padding: 8px 16px;
     margin: 0px 0px 16px;
     color: #fff;
     background-color: black;
     text-decoration: none;
     display: inline-block;
+    border: none;
 }
-.place-buy-btn:hover{
+.btn:hover{
     color: black;
     background-color: #ccc;
 }
+
  /* modal */
  .modal{
     position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background:rgba(0, 0, 0,0.4);
+    align-items: center;
+    justify-content: center;
+    display: none;
  }
+ .modal-container{
+    background: #fff;
+    width: 900px;
+    max-width: calc(100% - 32px);
+    min-height: 200px;
+    position: relative;
+    animation: modalFadein ease 0.5s
+ } 
+ header.modal-header{
+    background: #009688;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: #fff;
+ }
+ .modal .ti-bag{
+    margin-right: 16px;
+ }
+ .modal .ti-close{
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #fff;
+    padding: 12px;
+    cursor: pointer;
+    opacity: 0.9;
+ }
+ .modal .ti-close:hover{
+    opacity: 1;
+
+ }
+ .modal-body{
+    padding: 16px;
+    display: block;
+ }
+.modal-label{
+    display: block;
+    font-size: 15px;
+    margin-top: 12px;
+}
+.modal-input{
+    border: 1px solid #ccc;
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+#buy-tickets{
+    background: #009688;
+    border: none;
+    color: #fff;
+    width: 100%;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 18px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+#buy-tickets:hover{
+    opacity: 1;
+}
+.modal-footer{
+    padding: 16px;
+    text-align: right;
+   
+}
+.modal-footer a{
+    color: #2196f3;
+}
+.open{
+    display: flex !important;
+}
+@keyframes modalFadein {
+    from {
+        opacity: 0;
+         transform: translateY(-140px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    
+    }
+    
+}
+contact-content{
+    margin-top: 48px;
+}
+.contact-info{
+    font-size: 18px;
+    line-height: 1.5;
+}
+.contact-info i[class*="ti-"]{
+    width: 30px;
+    display: inline-block;
+}
+
+.contact-form{
+    font-size: 15px;
+    background-color: #fff !important;
+}
+.contact-form .form-control{
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+.contact-form {
+    font-size: 16px;
+    color: #fff;
+    background: #000;
+    padding: 10px 16px;
+    outline: none;
+}
+.map-section img{
+    width: 100%;
+}
+#footer{
+    padding: 64px 16px;
+    text-align: center;
+}
+#footer .social {
+    font-size: 26px;
+    padding-top: 50px;
+   
+}
+#footer .social a {
+    text-decoration: none;
+    color: rgba(0,0,0,0.6);
+    opacity: 0.8;
+    cursor: pointer;
+}
+#footer .social a:hover {
+    opacity: 1;
+}
+#footer .copyright  {
+    font-size: 20px;
+    margin-top: 20px;
+    
+}
+#footer .copyright a{
+    opacity: 0.7;
+    cursor: pointer;
+    color: #2196f3;
+}
+#footer .copyright a:hover{
+    opacity: 1;
+}
